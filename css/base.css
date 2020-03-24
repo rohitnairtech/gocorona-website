@@ -124,7 +124,7 @@ section {
 }
 ol,
 ul {
-    list-style: none;
+    list-style: circle;
 }
 blockquote,
 q {
