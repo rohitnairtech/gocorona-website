@@ -524,54 +524,8 @@ Created by : mutationthemes
      top: 27px;
      left: 7px;
 }*/
- .block-tracklist .audiojs .play-pause{
-     border-right: 0;
-}
- .block-tracklist .block-lyrics{
-     display: none;
-     margin:0 auto;
-}
- .block-tracklist .playlist{
-     border:1px solid rgba(255,255,255,.1);
-}
- .block-tracklist .playlist li{
-     padding-bottom: 1rem;
-     padding-left: 2.5rem;
-     padding-top: 1rem;
-     padding-right: 1.5rem;
-     cursor: pointer;
-     position: relative;
-}
- .block-tracklist .playlist li:not(:last-child){
-     border-bottom:1px solid rgba(255,255,255,.1);
-}
- .block-tracklist .playlist li:hover{
-     background: #090d11;
-}
- .block-tracklist .playlist li.playing{
-     background: #090d11;
-}
- .block-tracklist .playlist li:before{
-     content: "\e8d4";
-     font-family: "fontello";
-     position: absolute;
-     left: 1.0625rem;
-     top: 1.3rem;
-     font-size: 0.5625rem;
-     color: rgba(255,255,255,.7);
-}
- .block-tracklist .playlist li.playing:before{
-     content: "\e8d8";
-     color: #ff5252;
-}
- .block-tracklist .playlist li.playing.pause:before{
-     content: "\e8d4";
-     color: #ff5252;
-}
- span.selected, a.selected{
-     color: #ffffff;
-}
-/* End audio player*/
+
+
 /* Band members section*/
  .block-member{
      position: relative;
