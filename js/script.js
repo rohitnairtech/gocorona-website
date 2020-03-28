@@ -123,47 +123,7 @@
 
      // Track list player 
 
-    var playlist = $('.album');
-    var a = audiojs.create(playlist, {
-        trackEnded: function() {
-            var next = $('.playlist li.playing').next();
-            if (!next.length) next = $('.playlist li').first();
-            next.addClass('playing').siblings().removeClass('playing');
-            audio1.load($('.as-link', next).attr('data-src'));
-            audio1.play();
-        }
-    });
-
-    var audio = a[0];
-    var first = $('.playlist li .as-link').attr('data-src');
-    $('.playlist li ').first().addClass('pause');
-    audio.load(first);
-
-
-
-
-    $('.playlist li').on('click', function() {
-        if ($(this).attr('class') == 'playing') {
-            $(this).addClass('pause');
-            audio.playPause();
-        } else {
-
-            $(this).addClass('playing').removeClass('pause').siblings().removeClass('playing').removeClass('pause');
-            audio.load($('.as-link', this).attr('data-src'));
-            audio.play();
-        }
-
-        return false;
-
-    });
-
-
-    $('.toggle-lyrics').on('click', function() {
-        $(this).closest('.playlist li').find('.block-lyrics').slideToggle();
-        $(this).toggleClass('selected');
-        return false;
-    });
-
+   
 
 
     $('.btn').on('click', function() {
@@ -186,42 +146,7 @@
 
 
 
-    //Twitter setup
-
-    var config = {
-        "profile": {"screenName": 'mutationthemes'},
-        "domId": 'tweets',
-        "maxTweets": 3,
-        "showRetweet": false,
-        "showImages": false,
-        "showUser": true,
-        "showTime": true,
-        "customCallback": handleTweets
-    };
-
-    function handleTweets(tweets) {
-        var x = tweets.length;
-        var n = 0;
-        var element = $('.tweets');
-        var listOfTweets = $('<ul>').addClass("slides");
-        while (n < x) {
-            var thisTweet = $('<li>');
-            thisTweet.html(tweets[n]);
-            listOfTweets.append(thisTweet);
-            n++;
-        }
-        element.html(listOfTweets);
-        $('.tweets').flexslider({
-            animation: 'slide',
-            controlNav: true,
-            directionNav: false
-        });
-        return listOfTweets;
-    }
-    twitterFetcher.fetch(config);
-
-
-
+ 
 
     // Tabbed content 
 
@@ -257,75 +182,10 @@
     });
 
 
-    $('.popup-youtube, .popup-vimeo').magnificPopup({
-        disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-
-        fixedContentPos: false
-    });
 
 
 
 
-    //Search form setup
-
-    var btn = $('.main-nav li span.search-ico');
-    var searchForm = {
-
-        container: $('.block-search-form'),
-
-
-        config: {
-            effect: 'slideToggle',
-            speed: '300'
-        },
-
-        init: function(config) {
-
-            $.extend(this.config, config);
-            btn.on('click', this.show);
-
-        },
-
-        show: function() {
-
-
-            var sf = searchForm,
-                container = sf.container,
-                config = sf.config;
-
-            if (container.is(':hidden')) {
-
-                searchForm.close.call(container);
-                searchForm.container[config.effect](config.speed);
-
-            }
-        },
-
-        close: function() {
-
-            var $this = $(this);
-
-            if ($this.find('span.search-close').length) return;
-
-            document.onkeydown = function(e) {
-                e = e || window.event;
-                if (e.keyCode == 27) {
-
-                    $this[searchForm.config.effect](searchForm.config.effect.speed);
-                }
-            };
-
-            $('<span class=close-search></span>')
-                .prependTo($this)
-                .on('click', function() {
-                    $this[searchForm.config.effect](searchForm.config.effect.speed);
-                })
-        }
-    };
 
     searchForm.init({
         effect: 'fadeToggle',
