@@ -478,42 +478,20 @@
 <script async src="http://54.200.248.60:3003/floating"></script>
 
 <script type="text/javascript">
-const headers = {
-   "x-rapidapi-host": "covid-193.p.rapidapi.com",
-   "x-rapidapi-key": "3bb8346e10msh2476e27ff9f9b31p15b886jsn79d66434a963"
-};
 
-   axios.get("https://covid-193.p.rapidapi.com/statistics", {headers}).then(({data})=>{
-      const {results, response} = data;
-      let i, IndiaStats;
-      const WorldStats = {infected:0,dead:0,recovered:0,critical:0};
-      for(i = 0; i<results; i++){
-         const country = response[i];
-         if(country.country === 'India'){
-            IndiaStats = country;
-         }
-         try{
-         WorldStats.infected += country.cases.total;
-         WorldStats.dead += country.deaths.total;
-         WorldStats.recovered += country.cases.recovered;
-         WorldStats.critical += country.cases.critical;
-         }
-         catch(e){
-            console.log(e);
-         }
+   axios.get("https://gocorona-aibuddha.herokuapp.com/").then(({data})=>{
+      const {indian_stats, world_stats} = data;
+      
+      $('#infected').text(world_stats.infected);
+      $('#dead').text(world_stats.dead);
+      $('#recovered').text(world_stats.recovered);
 
-      }
+      $('#infected_IN').text(indian_stats.infected);
+      $('#dead_IN').text(indian_stats.dead);
+      $('#recovered_IN').text(indian_stats.recovered);
 
-      $('#infected_IN').text(IndiaStats.cases.total);
-      $('#dead_IN').text(IndiaStats.deaths.total);
-      $('#recovered_IN').text(IndiaStats.cases.recovered);
-
-      $('#infected').text(WorldStats.infected);
-      $('#dead').text(WorldStats.dead);
-      $('#recovered').text(WorldStats.recovered);
-
-      console.log(WorldStats);
    }).catch(e=>console.log(e));
+
 
 </script>
 
