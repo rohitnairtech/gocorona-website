@@ -1,10 +1,4 @@
-/* Table of Content
-==================================================
-    1.Reset & Basics
-    2.Basic Styles
-    3.Typography and Common style
-    4.Links
-    5.Misc
+
 
 
 /* Reset & Basics (Inspired by E. Meyers) */
@@ -194,6 +188,8 @@ body {
 
 /* Typography and Common style*/
 
+
+
 h1,
 h2,
 h3,
@@ -381,7 +377,7 @@ section,
     text-transform: uppercase;
 }
 .text-white {
-    color: #ffffff;
+    color: #ffffff!important;
 }
 
 .text-red {
@@ -512,6 +508,7 @@ input[type]:-moz-placeholder {
 a.link{
     margin-bottom: 1rem;
     display: block;
+    color: #d0343a;
 }
 .as-link{
     cursor: pointer;
@@ -660,7 +657,7 @@ div[class*="col-"].gap-double-sm, .gap-double-sm {
 /*Misc */
 
 .bg-secondary {
-    border-top: 1px solid rgba(59, 75, 91, 0.3)
+    border-top: 1px solid rgba(59, 75, 91, 0.3);
 }
 .bg-red {
     background: #ff5252;

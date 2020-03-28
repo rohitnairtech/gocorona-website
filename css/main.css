@@ -1,26 +1,6 @@
-/* 
-
-Mousiqua - Music Band and Musician Bootstrap 4 Template
-Copyright 2018  www.mutationmedia.net 
-Created by : mutationthemes  
-
-*/
-
-/* Table of Content ================================================== 
-
-1.Preloader
-2.Site wrapper
-3.Search form
-4.To the top
-5.About section
-6.Discography section
-7.Band section
-8.Tours section
-9.Gallery section
-10.News section
-11.Contact section
-12.Footer section
-13.Mediaqueries 
+.dark-bg{
+    background-color: #13181d;
+}
 
 
 
@@ -325,6 +305,15 @@ Created by : mutationthemes
 }
 
 
+.counter-body{
+    width: 16rem;
+}
+
+.counter{
+    height: 8rem;
+    flex-direction: column;
+}
+
  .header.switched-header .block-helper li a {
      color: #ff5252;
      opacity: 1;
@@ -426,6 +415,9 @@ Created by : mutationthemes
 /* End hero Section*/
 /* Discography section*/
 
+.discography{
+    background-color: #13181d;
+}
 
 .block-album-info li h5{
     position: relative;
@@ -460,70 +452,11 @@ Created by : mutationthemes
      font-weight: 700;
      font-size: .9rem;
 }
- .countdown .counter-bg {
-    background: #ff5252;
-    padding: 20px 35px;
-    display: inline-block;
-    border-radius: 0.25rem;
-    margin: 0 10px 0 10px;
-    line-height: 1.2;
-    text-transform: none;
-}
 
- .countdown .counter-bg span.counter {
-     font-size: 4rem;
-    font-weight: 600;
-}
 
- .countdown .counter-bg span.label {
-     font-size: .85rem;
-    font-weight: 400;
-    display: block;
-}
+
 /* End discography Section*/
-/* Audio player*/
- .block-tracklist .audiojs {
-     background-image: none;
-     background-color: #1a1a1a;
-     -webkit-box-shadow: none;
-     box-shadow: none;
-     width: 100%;
-     height: 7.3rem;
-     display: none;
-}
-/* .block-tracklist .audiojs .scrubber {
-     background-color: rgba(255, 255, 255, 0.7);
-     position: absolute;
-     height: 4px;
-     top: 33px;
-     z-index: 9999;
-     width: calc(100% - 130px);
-     left: 55px;
-     border-top: 0;
-}
- .block-tracklist .audiojs .time {
-     position: absolute;
-     text-shadow: none;
-     border: none;
-     height: auto;
-     line-height: normal;
-     margin: 0;
-     padding: 0;
-     top: 20px;
-     right: 62px;
-}
- .block-tracklist .audiojs .progress{
-     border-radius: 0;
-}
- .block-tracklist .audiojs .play-pause{
-     height: 55px;
-     width: 35px;
-}
- .block-tracklist .audiojs p{
-     position: relative;
-     top: 27px;
-     left: 7px;
-}*/
+
 
 
 /* Band members section*/
