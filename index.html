@@ -2,10 +2,21 @@
    <html lang="en">
    <head>
          <!-- Metas -->
+               <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88104331-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-88104331-6');
+var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101244524);
+</script>
+<script async src="//static.getclicky.com/js"></script>
          <meta charset="utf-8">
          <title>GoCorona Bot by AiBuddha</title>
-         <meta name="description" content="">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta name="description" content="NLP Based Chat system to provide with stats, hospital bed availabilty and health advisories">
+         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
          <!-- Css -->
          <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
          <link href="css/base.css" rel="stylesheet" type="text/css" media="all"/>
@@ -15,16 +26,6 @@
          <link href="css/fonts.css" rel="stylesheet" type="text/css"  media="all" />
          <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"> 
          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,300,400,400i,600,700,800" rel="stylesheet">
-
-         <style type="text/css">
-            #globeArea {
-  
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-         </style>
       </head>
       <body>
       
@@ -47,7 +48,7 @@
                                  <div class="inner-hero">
                                     <div class="back-rect"></div>
                                     <h1 class="large text-white uppercase mb-0">GoCorona Bot by AiBuddha</h1>
-                                    <h5 class="mb-0 text-white uppercase">The disease my isolate us physically, but our minds shall remain free.</h5>
+                                    <h5 class="mb-0 text-white uppercase">The disease may isolate us physically, but our minds shall remain free.</h5>
                                  </div>
                               </div>
                               <!--End row-->
@@ -265,17 +266,46 @@
                                                       
                                                 
                                              </div>
-                                             <div class="container-fluid">
-                                             <div class="row" style="height:600px;">
-                                               <div class="col-sm-12" id="globeArea" style="width: 500px; height: 500px"></div>
+                                          <div class="row justify-content-center">
+                                          <div class="col-12 col-md-10 col-lg-9">
+                                             <div class="block-content text-center">
+                                                <div class="block-title ">
+                                                   <h1 class="uppercase text-white">How did corona reach India?</h1>
+                                                </div>
                                              </div>
                                           </div>
+                                       </div>   
+                                          
+                                          <div class="container">
+                                             <div class="row" style="padding-top: 10px">
+                                               <div class="col-sm-12 text-center" id="globeArea" style="width: 400px; height: 500px"></div>
+                                             </div>
                                           </div>
-                  
-                                 </div>
-                                 <!--End inner hero-->
+
+
+                                          <div class="row justify-content-center">
+                                          <div class="col-12 col-md-10 col-lg-9">
+                                             <div class="block-content text-center">
+                                                <div class="block-title ">
+                                                   <h1 class="uppercase text-white">Infected Demographics(India)</h1>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                       <div class="container">
+                                          <div class="row">
+                                             <div class="col-12 col-sm-12 col-md-6">
+                                                <canvas id="myChartGender" width="400" height="400"></canvas>
+                                             </div>
+                                             <div class="col-12 col-sm-12 col-md-6">
+                                                <canvas id="myChartAge" width="400" height="400"></canvas>
+                                             </div>
+                                          </div>
+                                       </div>
                                  
                               </li>
+                              </div>
                            </div>
                         </div>
                         <!--End main slider-->
@@ -311,7 +341,7 @@
                            <!--Tab-->
                            <li class="active ">
                               <div class="block-content text-center">
-                                 <p class="text-white mt-3"><span class="opc-70">Powered by AiBuddha -</span> <a class="link" href="#">Visit Us</a> </p>
+                                 <p class="text-white mt-3"><span class="opc-70">Powered by AiBuddha -</span> <a class="link" href="https://aibuddha.in">Visit Us</a> </p>
                               </div>
                               <div class="block-content gap-one-top-sm text-left">
                                  <div class="block-content ">
@@ -389,7 +419,6 @@
                <!--End container-->
             </section>
             <!--End faq section-->
-             
             <!--Contact section-->
             <section id="contact" class="contact main bg-dark-blue">
                <!--Container-->
@@ -408,7 +437,7 @@
                </div>
                <!--End container-->
                <!--Container-->
-               <div class="container dark-bg bg-dark-blue">
+               <div class="container dark-bg bg-dark-blue" id="team">
                   <div class="row justify-content-center">
                      <div class="col-12 col-lg-10">
                         <ul class="feature-list feature-list-sm text-center row">
@@ -476,8 +505,17 @@
                <!--End container-->
             </section>
             <!--End contact section-->  
-
-         </div>
+            <footer class="dark-bg bg-dark-blue text-white">
+                           <h6 class="text-center">Data Source: <a target="_blank" href="https://www.covid19india.org/">Covid19India.org</a> & <a target="_blank" href="https://www.worldometers.info/coronavirus/">WorldOMeter</a></h6>
+            <h6 class="text-center">NLP and webscrapped data API Credit: <a target="_blank" href="https://gocorona-aibuddha.herokuapp.com/">Rohit</a> Repo: <a target="_blank" href="https://github.com/rohitnairtech/gocorona-api">GoCorona-api</a></h6>
+            <h6 class="text-center">Contributors: <a target="_blank" href="https://github.com/rohitnairtech/">Rohit</a> & <a target="_blank" href="https://github.com/whattamenon">Siddharth</a></h6>
+            <h6 class="text-center">Made by <a target="_blank" href="https://aibuddha.in">AiBuddha</a> with ❤️</h6>
+         </footer>
+         <style>
+            footer>a{
+               color:#d0343a !important;
+            }
+         </style>
          <!-- End wrapper-->
          <!--Javascript--> 
          <script src="js/jquery-1.12.4.min.js"></script>
@@ -486,18 +524,95 @@
          <script src="js/jquery.magnific-popup.min.js" ></script>
          <script src="js/placeholders.min.js"></script>
          <script src="js/script.js"></script>
+         
+         <!-- FLOATING PLUGIN -->
          <div id="floating-chat"></div>
-         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-         <script async src="http://54.200.248.60:3003/floating"></script>
+         <script async src="http://floating.aibuddha.in/floating"></script>
+         <!-- FLOATING PLUGIN -->
 
+         <link href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css" rel="stylesheet">
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js" type="text/javascript"></script>
 
 <script src="https://threejs.org/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/giojs@2.2.1/build/gio.min.js"></script>
-
-
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
    <script type="text/javascript">
-      axios.get("https://gocorona-aibuddha.herokuapp.com/all").then(({data})=>{
-         data = data.data;
+
+const ageChart = new Chart('myChartAge', {
+    type: 'bar',
+    data: {
+        labels: ['Young (< 25 yrs)', 'Working (25-55 yrs)', 'Elderly (>55 yrs)'],
+        datasets: [{
+            label: 'Infected Age Distribution',
+            data: [20, 467, 58],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+const genderChart = new Chart('myChartGender', {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+         data: [
+            396,
+            951
+         ],
+         backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)'
+         ],
+         label: 'Dataset 1'
+      }],
+      labels: [
+         'Male',
+         'Female'
+      ]
+   },
+    options:{
+      responsive: true,
+      legend: {
+         position: 'top',
+      },
+      title: {
+         display: true,
+         text: 'Infected Gender Distribution'
+      },
+      animation: {
+         animateScale: true,
+         animateRotate: true
+      }
+   }
+});
+
+
+      const countryPicked = (selectedCountry, relatedCountries) =>{
+         new Noty({type:'warning',text: 'Selected Country: '+selectedCountry.name, timeout:5000, killer:true}).show();
+      }
+
+fetch("https://gocorona-aibuddha.herokuapp.com/aib").then(data=>{
+      data.json().then(({data})=>{
          const {indian_stats, world_stats, indian_data} = data;
 
          $('#infected').text(world_stats.infected);
@@ -511,33 +626,38 @@
          controller.addData(indian_data.gio);
          controller.init();
 
-      }).catch(e=>console.log(e));
+         const {age, gender} = indian_data.demography;
 
-        const container = document.getElementById( "globeArea" );
-const configs = {
+         ageChart.data.datasets[0].data = [age.children, age.working, age.elderly];
+         ageChart.update();
+         genderChart.data.datasets[0].data = [gender.male, gender.female]
+         genderChart.update();
+
+      }).catch(e=>console.log(e));
+   }).catch(e=>console.log(e));
+      const container = document.getElementById("globeArea");
+      const configs = {
         control: {
                 stats: false,
                 disableUnmentioned: true,
-                lightenMentioned: false,
-                inOnly: true,
+                lightenMentioned: true,
+                inOnly: false,
                 outOnly: false,
                 initCountry: "IN",
                 halo: true
         },
-       color: {
-         background:0x13181D
-        },
         brightness:{
          mentioned:0.5,
-         related:0.6,
+         related:0.7,
          ocean:1
       }
      };
 
         const controller = new GIO.Controller(container, configs);
-/*        controller.configure({
+        controller.onCountryPicked( countryPicked );
+        controller.setTransparentBackground( true );
 
-         });*/
+
    </script>
       </body>
 

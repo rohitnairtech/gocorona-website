@@ -133,19 +133,6 @@
 
     });
 
-
-    // Count down setup
-
-    $('.countdown').countdown('2019/12/20').on('update.countdown', function(event) {
-  var $this = $(this).html(event.strftime(''
-    + '<div class="counter-bg mb-4 mb-lg-0"><span class="counter">%d</span> <span class="label">day%!d</span></div> '
-    + '<div class="counter-bg mb-4 mb-lg-0"><span class="counter">%H</span> <span class="label">hr%!H</span></div> '
-    + '<div class="counter-bg mb-4 mb-lg-0"><span class="counter">%M</span> <span class="label">min%!M</span></div> '
-    + '<div class="counter-bg"><span class="counter">%S</span> <span class="label">sec%!S</span></div>'));
-});
-
-
-
  
 
     // Tabbed content 
@@ -180,17 +167,5 @@
             duration: 300
         }
     });
-
-
-
-
-
-
-
-    searchForm.init({
-        effect: 'fadeToggle',
-        speed: '300'
-    });
-
 
 })(jQuery);
