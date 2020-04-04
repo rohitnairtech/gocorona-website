@@ -15,7 +15,7 @@ setTimeout(()=>{
         $(".loader-inner").fadeOut();
         $(".loader").delay(200).fadeOut("slow"); 
     }
-}, 2500);
+}, 3000);
 
 
     // Scroll to
