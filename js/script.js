@@ -4,13 +4,18 @@
     // Windows load
 
     $(window).on("load", function() {
-
-        // Site loader 
-
         $(".loader-inner").fadeOut();
         $(".loader").delay(200).fadeOut("slow");
-
     });
+
+setTimeout(()=>{
+    const loaderState = $('.loader-inner').css('display');
+    if(loaderState !== 'none'){
+        $(window).unbind('load');
+        $(".loader-inner").fadeOut();
+        $(".loader").delay(200).fadeOut("slow"); 
+    }
+}, 2500);
 
 
     // Scroll to
